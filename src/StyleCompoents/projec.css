@@ -1,0 +1,125 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.cut-x {
+    position: fixed;
+    right: 3rem;
+    color: red;
+    font-size: x-large;
+    cursor: pointer;
+    background-color: #7c5757;
+    width: 3rem;
+    height: 2rem;
+    border-radius: 100%;
+    
+}
+
+.cart_log {
+    color:black;
+    position: fixed;
+    width: 4rem;
+    height: 5rem;
+    right: 1rem;
+    cursor: pointer;
+ 
+
+}
+.cart_log:hover{
+    color: blue;
+}
+
+.cart_Container {
+    /* background: rgb(255, 255, 255); */
+    width: 35%;
+    height: 43rem;
+    position: fixed;
+    right: 0rem;
+    top: 0;
+    text-align: center;
+    align-items: center;
+    border-radius: 1%;
+    padding: 0.5rem;
+    overflow-y: scroll;
+    z-index: 1001;
+}
+
+.innet_cart_container {
+    margin-top: 1rem;
+    background: rgb(238, 221, 216);
+    display: flex;
+    justify-content: space-between;
+    box-shadow: rgba(0, 0, 0, 0.5) 0px 1px 20px 0px;
+    border-radius: 0.5rem;
+    width: 90%;
+    box-shadow: 3px 3px 3px 3px rgb(0, 0, 0);
+    text-align: center;
+    padding: 0.3rem;
+
+}
+
+.imgCart {
+    width: 25%;
+    height: 7rem;
+    border-radius: 1rem;
+}
+
+.btnRomover {
+    margin: 1rem;
+    width: 6rem;
+    height: 2.3rem;
+    border-radius: 1rem;
+    border: none;
+    background-color: rgb(149, 141, 141);
+}
+
+.btnRomover:hover {
+    background-color: red;
+    color: black;
+    width: 6.1rem;
+}
+
+.total {
+    float: left;
+    font-family: emoji;
+    font-size: 2rem;
+    margin: 1rem;
+    color: green;
+    font-weight: bold;
+}
+.tota {
+    font-size: 2.2rem;
+    font-family: initial;
+    margin-top: 1rem;
+    font-weight: bolder;
+    color: green;
+}
+
+.Oder {
+    background: #484854;
+    border: none;
+    padding: 5px;
+    border-radius: 5%;
+    color: white;
+    font-weight: bold;
+    font-family: math;
+}
+
+.Oder:hover {
+    background-color: green;
+    
+    
+}
+
+.total_imtem_order {
+    background: white;
+    width: 90%;
+    margin-top: 1rem;
+    background: rgb(184, 179, 177);
+    border-radius: 0.5rem;
+    box-shadow: 3px 3px 3px 3px rgb(0, 0, 0);
+    padding: 1.3rem;
+
+}
