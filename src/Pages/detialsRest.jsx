@@ -1,7 +1,7 @@
 import React from 'react'
 import { useLocation } from 'react-router';
-import DetialsCard from '../Compoents/detialsCard';
-import { Restitempage } from '../StyleCompoents/Stylepublic';
+import DetialsCard from '../Components/detialsCard';
+import { Restitempage } from '../StyleComponents/Stylepublic';
 import RestNameData from '../DataCompFlie/secodjdon';
 import { IoFastFood } from "react-icons/io5";
 import { useNavigate } from 'react-router';

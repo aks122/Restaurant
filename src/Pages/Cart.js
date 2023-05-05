@@ -1,8 +1,37 @@
 import React from 'react'
 import { FaRupeeSign } from "react-icons/fa";
+import { useDispatch} from 'react-redux';
+import { remove } from '../Reducers';
+
+import { useNavigate, useLocation } from 'react-router';
 
 
-export const Cart = ({props,Removeitem}) => {
+
+export const Cart = ({props}) => {
+  let navigate = useNavigate()
+  const dispatch = useDispatch();
+  
+const Updateitem = (remove)=>{
+   dispatch(remove(remove))
+}
+
+  // const Removeitem = (img) => {
+  //   console.log(img)
+  //   let temp = [...items]
+  //   let data = temp.findIndex((e) =>
+  //     e.img === img,
+  //     { state: { id: img } },
+  //     navigate("/additem", { state: { id: img } })
+  //   )
+
+  // }
+  const location = useLocation();
+  console.log(location);
+    let  data = location.state.id
+
+
+
+
 
 
 
@@ -16,7 +45,7 @@ export const Cart = ({props,Removeitem}) => {
           <p>Quantity : <span>1</span></p>
           <p><FaRupeeSign/> {props.Rs}</p>
         </div>
-        <button  onClick={(Removeitem)} className='btnRomover'>Remove</button>
+        <button  onClick={(()=>Updateitem(remove))} className='btnRomover'>Remove</button>
         
     </div>
   

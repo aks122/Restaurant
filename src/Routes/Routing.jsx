@@ -1,26 +1,30 @@
 import React, { useEffect, useState } from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 
-import HeaderPublic from "../Compoents/HeaderPublic";
-import PrivateHeader from "../Compoents/PrivateHeader";
+import HeaderPublic from "../Components/HeaderPublic";
+import PrivateHeader from "../Components/PrivateHeader";
 import HomePublic from "../Pages/HomePublic";
 import LoginPage from "../Auth/login";
 import SignUpPage from "../Auth/signUp";
-import Footer from "../Compoents/wefooter";
+import Footer from "../Components/wefooter";
 import DetialsRest from "../Pages/detialsRest";
 import { Cart } from "../Pages/Cart";
 import { BsCart4 } from "react-icons/bs";
 import Additem from "../Pages/additem";
 import { FaRupeeSign } from "react-icons/fa";
-import Order from "../Compoents/button";
+import Order from "../Components/button";
+import { Provider } from "react-redux";
+import Store from "../Combine";
 
 
-
-
+import { useSelector } from "react-redux";
 
 
 let total = 0;
 const Routing = () => {
+  const selectorItems = useSelector((state)=> state.persistReducers.value)
+  
+
   const [open, setOpen] = useState(false);
   const [localValue, setLocalvalue] = useState([]);
   const [items, setItems] = useState(0);
@@ -62,30 +66,30 @@ const Routing = () => {
     setOpen(false);
   }
 
-  async function Removeitem(el) {
+  async function Updateitem(el) {
     let index = localValue.indexOf(el)
-    await localValue.splice(index, 1)
-    await localStorage.removeItem("value");
-    await localStorage.setItem("value", JSON.stringify(localValue))
-    await setLocalvalue(localValue)
-    await Close();
+    // await localValue.splice(index, 1)
+    // await localStorage.removeItem("value");
+    // await localStorage.setItem("value", JSON.stringify(localValue))
+    // await setLocalvalue(localValue)
+    // await Close();
     await OpenCart();
-    if (localValue.length === 0) {
-      localValue.length = 0;
-      localStorage.removeItem("value");
-      Close()
-    }
+    // if (localValue.length === 0) {
+    //   localValue.length = 0;
+    //   localStorage.Updateitem("value");
+    //   Close()
+    // }
 
 
 
   }
-  let token = localStorage.getItem("token")
-  useEffect(() => {
-    if (token !== null) {
-      setPravit(true)
-    }
+  // let token = localStorage.getItem("token")
+  // useEffect(() => {
+  //   if (token !== null) {
+  //     setPravit(true)
+  //   }
 
-  })
+  // })
 
 
 
@@ -100,51 +104,25 @@ const Routing = () => {
     Close()
 
   }
-  // let modalref = React.useRef(null)
-  // let modalrefcontaine = React.useRef(null)
-  // let rembutn = React.useRef(null)
-
-  // React.useEffect(() => {
-  //   const ModalDou = (e) => {
-  //     if(rembutn.current?.contains(e.target)){
-  //       // alert("dd")
-  //       // console.log(rembutn.current,"00000000000000000000000000000")
-  //       // alert("ddd")
-  //       // setOpen(true) 
-  //     }
-  //     else if (modalref.current?.contains(e.target)) {
-  //        setOpen(true) 
-  //     }
-  //     else if(!modalrefcontaine.current?.contains(e.target)){
-  //       console.log(rembutn.current,"00000000000000000000000000000")
-
-  //       //  alert("outmoaal")
-
-  //        Close()
-  //     }
-   
-  //   }
-//      document.body.addEventListener("click", ModalDou)
-//     return ()=>document.body.removeEventListener("click",ModalDou)
-// })
+  
 
 
 
   total = 0
   return (
     <>
-
+     <Provider store={Store}>
       <BrowserRouter >
         {open && <div className='cart_Container'>
           <h1 onClick={Close} className='cut-x'>X</h1>
 
           {maps &&
-            localValue.map((el,i) => {
+            selectorItems.map((el,i) => {
               total = total + el.Rs
               return (<>
               
-                <Cart  Removeitem={() => { Removeitem(el) }} props={el}
-                
+                <Cart  Updateitem={() => { Updateitem(el) }} props={el}
+                Index={i}
                                                                           
                  />
                  
@@ -175,6 +153,7 @@ const Routing = () => {
         </Routes>
         <Footer />
       </BrowserRouter>
+      </Provider>
 
 
     </>

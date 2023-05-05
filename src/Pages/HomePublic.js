@@ -1,6 +1,6 @@
 import React from 'react'
-import { HomePublicDiv } from '../StyleCompoents/Stylepublic';
-import HomeCardRest from '../Compoents/HomeCardRest';
+import { HomePublicDiv } from '../StyleComponents/Stylepublic';
+import HomeCardRest from '../Components/HomeCardRest';
 import fristJson from '../DataCompFlie/fistJson';
 import { useNavigate} from 'react-router';
 

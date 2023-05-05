@@ -1,5 +1,5 @@
 import React from 'react'
-import { CardResturHome } from '../StyleCompoents/Stylepublic';
+import { CardResturHome } from '../StyleComponents/Stylepublic';
 
 const HomeCardRest = (props) => {
 

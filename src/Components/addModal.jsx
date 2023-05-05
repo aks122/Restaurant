@@ -1,20 +1,22 @@
 import React, { useEffect } from 'react'
-import { AddModalDiv } from '../StyleCompoents/Stylepublic'
+import { AddModalDiv } from '../StyleComponents/Stylepublic'
 import { IoFastFood } from "react-icons/io5";
+import { useSelector } from 'react-redux';
 let newArr = []
 const AddModal = ({ Close, data }) => {
    
-   
-    useEffect(() => {
-        if (JSON.parse(localStorage.getItem("value"))=== null) {
-            newArr.length = 0;
-            localStorage.removeItem("value")
-        }else if(newArr.length!==JSON.parse(localStorage.getItem("value")).length){
-            newArr.length = 0;
-            newArr= [...JSON.parse(localStorage.getItem("value"))]
-        }
+        // console.log(selectorItems)
 
-    })
+    // useEffect(() => {
+    //     if (JSON.parse(localStorage.getItem("value"))=== null) {
+    //         newArr.length = 0;
+    //         localStorage.removeItem("value")
+    //     }else if(newArr.length!==JSON.parse(localStorage.getItem("value")).length){
+    //         newArr.length = 0;
+    //         newArr= [...JSON.parse(localStorage.getItem("value"))]
+    //     }
+
+    // })
   
 
     function AddCart(data) {
@@ -23,7 +25,7 @@ const AddModal = ({ Close, data }) => {
         Close()
 
 
-    }
+    }       
 
 
 

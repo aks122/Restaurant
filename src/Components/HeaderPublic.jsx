@@ -1,5 +1,5 @@
 import React from 'react'
-import { HeaderPublicDiv } from '../StyleCompoents/Stylepublic';
+import { HeaderPublicDiv } from '../StyleComponents/Stylepublic';
 import { NavLink } from "react-router-dom";
 import imglog from "../Assets/pngwing.com.png"
 

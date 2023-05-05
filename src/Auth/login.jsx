@@ -1,5 +1,5 @@
 import React from 'react'
-import { LoginDiv } from '../StyleCompoents/Stylepublic';
+import { LoginDiv } from '../StyleComponents/Stylepublic';
 import { IoMdContact } from "react-icons/io";
 import { BiLockOpen } from "react-icons/bi";
 import { useNavigate } from 'react-router';

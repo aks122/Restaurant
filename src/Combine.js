@@ -1,7 +1,9 @@
-import countValue from "./Reducers"
+    import countValue from "./Reducers"
 import storage from 'redux-persist/lib/storage' 
 import { persistStore, persistReducer } from 'redux-persist'
 import { configureStore } from "@reduxjs/toolkit";
+
+// import products from './Components/itemCardAdd'
 
 const persistConfig = {
     key: 'root',
@@ -10,9 +12,12 @@ const persistConfig = {
 const persistReducers = persistReducer(persistConfig, countValue)
 
 const Store = configureStore ({
+  
     reducer: {
-        persistReducers
+        persistReducers,
+        
     },
+    // products,
 })
 
 export const persistor=persistStore(Store)

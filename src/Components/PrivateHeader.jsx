@@ -1,5 +1,5 @@
 import React from 'react'
-import { PraviHeadDiv } from '../StyleCompoents/Stylepublic';
+import { PraviHeadDiv } from '../StyleComponents/Stylepublic';
 import { useNavigate } from 'react-router';
 const PrivateHeader = () => {
     const Navigate = useNavigate()

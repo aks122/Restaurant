@@ -21,6 +21,7 @@ export default function Footer() {
       &:nth-child(1) {
         color: gray;
         font-size: 2rem;
+        margin-left: -30px;
       }
     }
   `;

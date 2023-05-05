@@ -1,9 +1,9 @@
 import React from 'react'
-import { RestItemStyle } from '../StyleCompoents/Stylepublic'
-import ItemCardAdd from '../Compoents/itemCardAdd'
+import { RestItemStyle } from '../StyleComponents/Stylepublic'
+import ItemCardAdd from '../Components/itemCardAdd'
 import { useLocation } from 'react-router';
 import items from '../DataCompFlie/RestTotaltemData';
-import AddModal from '../Compoents/addModal';
+import AddModal from '../Components/addModal';
 import { useState } from 'react';
 
 
@@ -26,7 +26,7 @@ const Additem = () => {
     }
     
     )
-    console.log(restItmeshow)
+    // console.log(restItmeshow)
     
     async function Modalitem(el) {
         await setData(el)
@@ -37,7 +37,7 @@ const Additem = () => {
     }
     
   
-    return (<>
+    return (<div>
         {modal && <AddModal data = {data}  Close={Close} />}
        
          
@@ -84,6 +84,6 @@ const Additem = () => {
                 </RestItemStyle>
           
 
-    </>)
+    </div>)
 }
 export default Additem

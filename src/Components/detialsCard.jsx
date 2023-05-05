@@ -1,5 +1,5 @@
 import React from 'react'
-import { Detcard } from '../StyleCompoents/Stylepublic'
+import { Detcard } from '../StyleComponents/Stylepublic'
 
 
 const DetialsCard = (props) => {

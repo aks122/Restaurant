@@ -228,7 +228,7 @@ svg.logfood {
 }
 .deliveryshow {
     border: 2px red solid;
-    width: 6rem;
+    width: 8rem;
     border-radius: 1rem;
     height: 4rem;
     padding: 0.6rem;
